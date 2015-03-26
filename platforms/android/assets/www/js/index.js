@@ -65,7 +65,7 @@ var app = {
     coloring = c;
   } 
   
-  
+ var s; 
 
 $(function() {
     $( "#slider" ).slider({
@@ -75,14 +75,15 @@ $(function() {
       step: 1,
       slide: function( event, ui ) {
         $( "#amount" ).val( "s" + ui.value );
-        var val = $( "#slider" ).slider( "value" );
+         var x = ui.value;
+         s= x;
+         console.log(s);
       }
     });
     $( "#amount" ).val( "s" + $( "#slider" ).slider( "value" ) );
-    
-    console.log(s);
+     
   });
-  var s = "15";
+
 
   /*
 function updateSlider(slideAmount) {

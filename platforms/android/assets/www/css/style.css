@@ -327,15 +327,17 @@ width:auto;
 height:auto;
 */
 	  z-index: 100000;
-	  position: relative;
+	  /*position: relative;*/
 	  
 	}
 	
 	
 .dragImg{
-	position: relative;
+	/*position: relative;
     display: table;
-    text-align: center;
+    text-align: center;*/
+    /*height: 100%; 
+    width: 100%;*/
 }
 		
 
@@ -351,8 +353,8 @@ height:auto;
     position: absolute;
     border: dotted 1px black;
 
-    display: table-cell;
-    vertical-align: middle;
+    /*display: table-cell;
+    vertical-align: middle;*/
     
 }
 
@@ -393,11 +395,11 @@ li span {
 			left: 50%;
 			
 			}
-			
+/*			
 .ui-resizable-se {
     width: 25px;
     height: 25px;
-}
+}*/
 
 #save2{
 	top:480px;
