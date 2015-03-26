@@ -237,6 +237,8 @@ margin-left: 700px;
 
 
 
+
+
 #mypanel{
 	
 	width:200px;
@@ -251,46 +253,48 @@ overflow-y: hidden !important;
 	
 }
 
-#colorWrap{
+#color{
+	/*width:50px;
+	height:40px;*/
 
-    background-color: gray;
-    z-index: 100;
-  }
+}
+
+
   #controls {
 
 	position: relative;
 	margin: 22px 1% 0 0;
 	float: right;	
-	width: 350px;
+	width: 150px;
 	height: auto;
 	overflow: hidden;
   }
   
   #controls input {
-  	padding: 5px 10px;
-	height: 40px;
+  	/*padding: 5px 10px;*/
+	/*height: 40px;
 	margin-bottom: 20px;
 	box-sizing: border-box;
-	display: block;
+	display: block;*/
 
   } 
  
   input[type="button"]#erase-color {
-    background: white;
+   /* background: white;
       width:70px;
     height:50px;
-    -webkit-appearance: none;
+    -webkit-appearance: none;*/
 }
   input[type="color"]#color{
-  	padding: 0;
+  	/*padding: 0;*/
   }
   input[type="range"]#rangecolor{
-  	border: 1px solid blue;
+  	/*border: 1px solid blue;*/
   }
   input[type="button"]#white {
-	  background: white;
-    width:70px;
-    height:50px;
+	 /* background: white;*/
+    /*width:70px;
+    height:50px;*/
   }
   
   #where {
@@ -327,18 +331,14 @@ height:auto;
 	  
 	}
 	
-	.theImg{
-		 /* position: relative; */
+	
+.dragImg{
+	position: relative;
+    display: table;
+    text-align: center;
+}
 		
-		}
-		
-		.dragImg{
-			
-			
-			 /* position: relative; */
-			
-			
-			}
+
 	  
 
 
@@ -350,6 +350,9 @@ height:auto;
    
     position: absolute;
     border: dotted 1px black;
+
+    display: table-cell;
+    vertical-align: middle;
     
 }
 
@@ -394,4 +397,10 @@ li span {
 .ui-resizable-se {
     width: 25px;
     height: 25px;
+}
+
+#save2{
+	top:480px;
+	left:840px;
+	
 }

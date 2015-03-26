@@ -49,8 +49,23 @@ var app = {
 };
 
 /////////slider 
-var s;//size according to the range input 
 
+  
+ 
+///////////////////////// CANVAS!!
+// <script>
+    
+   // Variables for referencing the canvas and 2dcanvas context
+    var canvas,ctx;
+    
+  var coloring;
+  
+  function updateColor(colorAmount) {
+    var c = document.getElementById("color").value;
+    coloring = c;
+  } 
+  
+  
 
 $(function() {
     $( "#slider" ).slider({
@@ -60,39 +75,24 @@ $(function() {
       step: 1,
       slide: function( event, ui ) {
         $( "#amount" ).val( "s" + ui.value );
+        var val = $( "#slider" ).slider( "value" );
       }
     });
     $( "#amount" ).val( "s" + $( "#slider" ).slider( "value" ) );
-    var x = slider.value;
-    s = x;
-   //  console.log(s);
-  });
-  
- 
-///////////////////////// CANVAS!!
-// <script>
-		
-   // Variables for referencing the canvas and 2dcanvas context
-    var canvas,ctx;
     
-	var coloring;
-	
-	function updateColor(colorAmount) {
-		var c = document.getElementById("color").value;
-    coloring = c;
-	} 
-	
-	
-	
-	/*
+    console.log(s);
+  });
+  var s = "15";
+
+  /*
 function updateSlider(slideAmount) {
-	var x = document.getElementById("slider").value;
+  var x = document.getElementById("slider").value;
     s = x;
     console.log(s);
-	}
+  }
 */
-	
-	
+  
+  
     // Variables to keep track of the mouse position and left-button status 
     var mouseX,mouseY,mouseDown=0;
     // Variables to keep track of the touch position
@@ -106,7 +106,7 @@ function updateSlider(slideAmount) {
         // If lastX is not set, set lastX and lastY to the current position 
         if (lastX==-1) {
             lastX=x;
-	    lastY=y;
+      lastY=y;
         }
         // Let's use black by setting RGB values to 0, and 255 alpha (completely opaque)
         r=0; g=0; b=0; a=255;
@@ -118,17 +118,17 @@ function updateSlider(slideAmount) {
         //ctx.lineJoin = "round";
         // Draw a filled line
         ctx.beginPath();
-	// First, move to the old (previous) position
-	ctx.moveTo(lastX,lastY);
-	// Now draw a line to the current touch/pointer position
-	ctx.lineTo(x,y);
+  // First, move to the old (previous) position
+  ctx.moveTo(lastX,lastY);
+  // Now draw a line to the current touch/pointer position
+  ctx.lineTo(x,y);
         // Set the line thickness and draw the line
         ctx.lineWidth = s;
         ctx.stroke();
         ctx.closePath();
-	// Update the last position to reference the current position
-	lastX=x;
-	lastY=y;
+  // Update the last position to reference the current position
+  lastX=x;
+  lastY=y;
     } 
     // Clear the canvas context using the canvas width and height
     function clearCanvas(canvas,ctx) {
@@ -209,32 +209,32 @@ function updateSlider(slideAmount) {
             }
         }
     }
-	
-	//erases with the same size stroke  
-	function myEraser(){
-	
-			ctx.globalCompositeOperation = "destination-out";
-			ctx.strokeStyle = "rgba(0,0,0,1)";
-			// drawLine(ctx,touchX,touchY,s);
-	 }
-	 
-	 //goes back to the proportties of marker 
-	 function myMarker(){
-	
-			// ctx.globalCompositeOperation = "destination-out";
-			ctx.globalCompositeOperation = "source-over";
-			ctx.strokeStyle = c;
-			var c = document.getElementById("color").value;
-	 }
-	 
-	  // Clear the canvas context using the canvas width and height
-	  function clearCanvas(canvas,ctx) {
+  
+  //erases with the same size stroke  
+  function myEraser(){
+  
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.strokeStyle = "rgba(0,0,0,1)";
+      // drawLine(ctx,touchX,touchY,s);
+   }
+   
+   //goes back to the proportties of marker 
+   function myMarker(){
+  
+      // ctx.globalCompositeOperation = "destination-out";
+      ctx.globalCompositeOperation = "source-over";
+      ctx.strokeStyle = c;
+      var c = document.getElementById("color").value;
+   }
+   
+    // Clear the canvas context using the canvas width and height
+    function clearCanvas(canvas,ctx) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
     // Set-up the canvas and add our event handlers after the page has loaded
     function init() {
-	    
-	    
+      
+      
         // Get the specific canvas element from the HTML document
         canvas = document.getElementById('can');
         // If the browser supports the canvas tag, get the 2d drawing context for this canvas
@@ -259,7 +259,7 @@ function updateSlider(slideAmount) {
 
 $(document).on("pagecreate","#section1",function(){
   $("#section1").on("swipeleft",function(){
-  	console.log("section1 left"); 
+    console.log("section1 left"); 
     $.mobile.changePage("#section2",{transition:"slide"});
        
   }); 
@@ -273,7 +273,7 @@ $(document).on("pagecreate","#section1",function(){
 $(document).on("pagecreate","#section2",function(){
   $("#section2").on("swiperight",function(){
     $.mobile.changePage("#section1",{transition:"slide", reverse:true
-	    
+      
     });
     
 
@@ -286,7 +286,7 @@ $(document).on("pagecreate","#section2",function(){
 $(document).on("pagecreate","#section2",function(){
   $("#section2").on("swipeleft",function(){
     $.mobile.changePage("#section3",{transition:"slide", 
-	    
+      
     });
   });  
 });
@@ -295,7 +295,7 @@ $(document).on("pagecreate","#section2",function(){
 $(document).on("pagecreate","#section3",function(){
   $("#section3").on("swiperight",function(){
     $.mobile.changePage("#section2",{transition:"slide", reverse:true
-	    
+      
     });
   });  
 });
@@ -303,7 +303,7 @@ $(document).on("pagecreate","#section3",function(){
 $(document).on("pagecreate","#section3",function(){
   $("#section3").on("swipeleft",function(){
     $.mobile.changePage("#section4",{transition:"slide",
-	    
+      
     });
   });  
 });
@@ -311,7 +311,7 @@ $(document).on("pagecreate","#section3",function(){
 $(document).on("pagecreate","#section4",function(){
   $("#section4").on("swiperight",function(){
     $.mobile.changePage("#section3",{transition:"slide", reverse:true
-	    
+      
     });
   });  
 });
@@ -319,7 +319,7 @@ $(document).on("pagecreate","#section4",function(){
 $(document).on("pagecreate","#section4",function(){
   $("#section4").on("swipeleft",function(){
     $.mobile.changePage("#section5",{transition:"slide", 
-	    
+      
     });
   });  
 });
@@ -327,8 +327,8 @@ $(document).on("pagecreate","#section4",function(){
 $(document).on("pagecreate","#section5",function(){
   $("#section5").on("swiperight",function(){
     $.mobile.changePage("#section4",{transition:"slide", reverse:true
-	    
-	    
+      
+      
     });
   });  
 });
@@ -347,23 +347,23 @@ $(document).one('pagebeforecreate', function () {
 
 
 //slider
-		  function showValue(newValue)
-		  {
-		y=newValue;
+      function showValue(newValue)
+      {
+    y=newValue;
 
-		}
-		
+    }
+    
 /////draggable img
 
  
-	
-		
+  
+    
 ////////////////save picture 
 
 
 function save(dataURL){
-	alert("do you want to save?");
-	// console.log(dataURL);
+  alert("do you want to save?");
+  // console.log(dataURL);
 
     window.canvas2ImagePlugin.saveImageDataToLibrary(
         function(msg){//the file of the images
@@ -388,16 +388,16 @@ function save(dataURL){
 $("#dropHere").droppable({
        drop: function(e, ui){
                if(ui.draggable.hasClass("dragImg")) {
-	               
-	               var newUI = $('<div>');
-	               newUI.append(ui.draggable.children('img').eq(0).clone());
-	               //ui.draggable.remove();
-	               
-	               
-	               /*
-		               
-		               */
-	               
+                 
+                 var newUI = $('<div>');
+                 newUI.append(ui.draggable.children('img').eq(0).clone());
+                 //ui.draggable.remove();
+                 
+                 
+                 /*
+                   
+                   */
+                 
      //$(this).append($(ui.helper).clone().css('z-index','999999'));
   $(this).append(newUI);
      console.log("clone dropped");
@@ -428,38 +428,38 @@ $(this).remove();
 newUI.resizable(resizeOpts);
 $("imgSize-"+counts[0]).resizable(resizeOpts);
 
-	console.log("making resizable");
+  console.log("making resizable");
       
        // console.log("making resizable");
       }
-      	var el = document.createElement("div");
-      	
-      	
-      	
+        var el = document.createElement("div");
+        
+        
+        
       }
       
       });
 
 
 function makeScale(e,scale){
-	e.style = e.style + "-webkit-transform:scale("+scale+"); transform:scale("+scale+");";
+  e.style = e.style + "-webkit-transform:scale("+scale+"); transform:scale("+scale+");";
 }
 
 
 var zIndex = 0;
 function make_draggable(elements)
-{	
-	elements.draggable({
-		containment:'parent',
-		start:function(e,ui){ ui.helper.css('z-index',++zIndex); },
-		stop:function(e,ui){
-		}
-	});
+{ 
+  elements.draggable({
+    containment:'parent',
+    start:function(e,ui){ ui.helper.css('z-index',++zIndex); },
+    stop:function(e,ui){
+    }
+  });
 }    
 
 
     
-   }); 	
+   });  
        
     
         },
@@ -471,5 +471,19 @@ function make_draggable(elements)
        
         document.getElementById('can')
     );
-    	alert("hi");
+      alert("hi");
+}
+
+function save2(dataURL)
+{
+    alert("saving!");
+    window.canvas2ImagePlugin.saveImageDataToLibrary(
+        function(msg){
+            console.log(msg);
+        },
+        function(err){
+            console.log(err);
+        },
+        document.getElementById('dropHere')
+    );
 }
