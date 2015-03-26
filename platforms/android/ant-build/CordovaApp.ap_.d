@@ -83,6 +83,7 @@
 /Users/dickweed/documents/app_4/platforms/android/assets/www/js/jquerypanzoom.js \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/js/modernizr-2.6.2.min.js \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/js/ninjaScroll.js \
+/Users/dickweed/documents/app_4/platforms/android/assets/www/js/pinch.js \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/js/pinchzoom.js \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/js/SavePhotoPlugin.js \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/js/simple-slider.js \

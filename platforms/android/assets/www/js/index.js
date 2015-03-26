@@ -473,4 +473,3 @@ function make_draggable(elements)
     );
     	alert("hi");
 }
-
