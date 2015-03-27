@@ -74,13 +74,13 @@ $(function() {
       max: 15,
       step: 1,
       slide: function( event, ui ) {
-        $( "#amount" ).val( "s" + ui.value );
+        // $( "#amount" ).val( "s" + ui.value );
          var x = ui.value;
          s= x;
          console.log(s);
       }
     });
-    $( "#amount" ).val( "s" + $( "#slider" ).slider( "value" ) );
+    // $( "#amount" ).val( "s" + $( "#slider" ).slider( "value" ) );
      
   });
 
@@ -417,7 +417,7 @@ $("#dropHere").droppable({
          newUI.addClass("item-"+counts[0]);
          newUI.css('position','absolute');
          newUI.css('display','block');
-         newUI.css('top','160px');
+         newUI.css('top','30px');
          newUI.css('left','300px');
          newUI.css('z-index','999999');
          make_draggable(newUI);

@@ -57,12 +57,16 @@
 /Users/dickweed/documents/app_4/platforms/android/assets/www/css/images/ui-bg_glass_100_f6f6f6_1x400.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/css/images/ui-icons_222222_256x240.png \
+/Users/dickweed/documents/app_4/platforms/android/assets/www/img/clear.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/img/connect.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/img/css-images-ui-icons_222222_256x240.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/img/download.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/img/drawers.png \
+/Users/dickweed/documents/app_4/platforms/android/assets/www/img/eraser.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/img/home.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/img/logo.png \
+/Users/dickweed/documents/app_4/platforms/android/assets/www/img/marker.png \
+/Users/dickweed/documents/app_4/platforms/android/assets/www/img/save.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/img/wire_frames-01.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/img/wire_frames-02.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/img/wire_frames-03.png \

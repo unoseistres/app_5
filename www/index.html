@@ -95,14 +95,26 @@
 
 				     </script>
 		
-		 			<label for="amount"> Test:</label>
-  					<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+		 			<!-- <label for="amount"> Test:</label> -->
+  					<!-- <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;"> -->
 				   
 					 
-				     <button id="eraser" onclick="myEraser()">Eraser</button>
-				     <button id="myMarker" onclick="myMarker()">Marker</button>
-				     <input type="submit" value="Clear" onclick="clearCanvas(canvas,ctx);">
-				     <input id="save" type="button" value="Save" id="save" size="23" onclick="save()">
+				     <button id="eraser" onclick="myEraser()">
+				     	<img src="img/eraser.png" width="25%" height="25%" id="dagger" />
+				     </button>
+				     <button id="myMarker" onclick="myMarker()">
+				     	<img src="img/marker.png" width="25%" height="25%" id="dagger" />
+				     </button>
+				     <!-- <input type="submit" value="Clear" onclick="clearCanvas(canvas,ctx);"> -->
+				     <button type="submit" value="Clear" onclick="clearCanvas(canvas,ctx);">
+				     	<img src="img/clear.png" width="25%" height="25%" id="dagger" />
+				     </button>
+				     <!-- <input id="save" type="button" value="Save" id="save" size="23" onclick="save()"> -->
+				     <button type="button" value="Save" size="23" onclick="save()">
+				     	<img src="img/save.png" width="25%" height="25%" id="dagger" />
+				     </button>
+
+
 			    </div>
     
 				</div>	
@@ -123,6 +135,8 @@
              </div>
              <div id="dropHere">
 	            <div id="box" style="height:225px;width:225px;background:red;position:absolute;" ontouchmove="touchMove(e)" ontouchstart="touchStart(e)" ontouchEnd="touchEnd(e)"></div> 
+
+
              </div>
              <!-- <canvas id="dropHere">
 	           
