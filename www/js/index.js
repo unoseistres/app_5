@@ -289,6 +289,7 @@ $(document).on("pagecreate","#section2",function(){
     $.mobile.changePage("#section3",{transition:"slide", 
       
     });
+
   });  
 });
 
@@ -335,11 +336,20 @@ $(document).on("pagecreate","#section5",function(){
 });
 ////////////////////////////////////////////////////external panel
 
-var panel = '<div data-role="panel" id="mypanel" data-position="right" data-display="overlay" data-position-fixed="true"></div>';
+var panel = '<div data-role="panel" class="panel" id="mypanel" data-position="right" data-display="overlay" data-position-fixed="true" ></div>';
 
 $(document).one('pagebeforecreate', function () {
+ // <html> 
+ // <ul data-role="listview" data-inset="true">
+ //            <li data-role="list-divider">List view</li>
+ //            <li data-icon="home">item</li>
+ //            <li data-icon="home">item</li>
+ //            <li data-icon="home">item</li>
+ //        </ul>
+ //  </html>
   $.mobile.pageContainer.prepend(panel);
-  $("#mypanel").panel();
+  $("#mypanel").panel().listview();
+  $("#mypanel").listview();
   $('#section2').append($("#mypanel"))
      
 });
@@ -431,7 +441,11 @@ $("imgSize-"+counts[0]).resizable(resizeOpts);
 
   console.log("making resizable");
       
-       // console.log("making resizable");
+       console.log("making resizable");
+      
+
+
+
       }
         var el = document.createElement("div");
         
@@ -442,9 +456,8 @@ $("imgSize-"+counts[0]).resizable(resizeOpts);
       });
 
 
-function makeScale(e,scale){
-  e.style = e.style + "-webkit-transform:scale("+scale+"); transform:scale("+scale+");";
-}
+
+
 
 
 var zIndex = 0;
@@ -456,12 +469,14 @@ function make_draggable(elements)
     stop:function(e,ui){
     }
   });
+
+   
 }    
 
 
     
    });  
-       
+       event.preventDefault();
     
         },
         
@@ -472,19 +487,60 @@ function make_draggable(elements)
        
         document.getElementById('can')
     );
+
       alert("hi");
 }
 
-function save2(dataURL)
-{
-    alert("saving!");
-    window.canvas2ImagePlugin.saveImageDataToLibrary(
-        function(msg){
-            console.log(msg);
-        },
-        function(err){
-            console.log(err);
-        },
-        document.getElementById('dropHere')
-    );
-}
+// function makeScale(e,scale){
+//   e.style = e.style + "-webkit-transform:scale("+scale+"); transform:scale("+scale+");";
+// }
+
+//   function touchStart(e) {  
+//   var box = document.getElementById("box");  
+//   box.style.background = "green";  
+//   console.log( "Touch Start! " + e.type + " event=" + inspect( e ) );  
+//   logDetails( inspect( e.touches.item(0) ) );  
+//   e.preventDefault();  
+//   return false;  
+// }  
+  
+// function touchMove(e) {  
+//   var targetEvent =  e.touches.item(0);  
+//   var box = document.getElementById("box");  
+//   box.style.background = "yellow";  
+//   box.style.left = targetEvent.clientX + "px";  
+//   box.style.top= targetEvent.clientY + "px";  
+//   console.log("[x,y]=" + targetEvent.clientX + "," + targetEvent.clientY );  
+//   logDetails( inspect( e ) );  
+//   e.preventDefault();  
+//   return false;  
+// }  
+
+    
+//   function touchEnd(e) {  
+//   var box = document.getElementById("box");  
+//   box.style.background = "green";  
+//   console.log( "Touch Start! " + e.type + " event=" + inspect( e ) );  
+//   logDetails( inspect( e.touches.item(0) ) );  
+//   e.preventDefault();  
+//   return false;  
+// }  
+  
+// var dist =
+// Math.sqrt(
+//     (e.touches[0].x-e.touches[1].x) * (e.touches[0].x-e.touches[1].x) +
+//     (e.touches[0].y-e.touches[1].y) * (e.touches[0].y-e.touches[1].y));
+
+// function save2(dataURL)
+// {
+//     alert("saving!");
+//     window.canvas2ImagePlugin.saveImageDataToLibrary(
+//         function(msg){
+//             console.log(msg);
+//         },
+//         function(err){
+//             console.log(err);
+//         },
+//         document.getElementById('dropHere')
+//     );
+// }

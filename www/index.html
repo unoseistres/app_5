@@ -28,11 +28,14 @@
 <script src="js/jquery.mobile-1.4.5.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/touch-punch.js"></script>
+<script src="js/panzoom.js"></script>
 
-<script src="js/hammer.js"></script>
-<!-- <script src="js/pinchzoom.js"></script>
+
+<!-- <script src="js/hammer.js"></script>
+ --><!-- <script src="js/pinchzoom.js"></script>
 
 <script src="js/pinch.js"></script> -->
+
 
 <script type="text/javascript" charset="utf-8" src="SavePhotoPlugin.js"></script>
 
@@ -112,20 +115,21 @@
 	
 </div>
 
-<div id="section2" data-role="page">
+<div id="section2" data-role="page" data-position="fixed">
 	<div data-role="main" class="ui-content">
 				
 		<div class="dragImg">
 			
              </div>
              <div id="dropHere">
-	           
+	            <div id="box" style="height:225px;width:225px;background:red;position:absolute;" ontouchmove="touchMove(e)" ontouchstart="touchStart(e)" ontouchEnd="touchEnd(e)"></div> 
              </div>
              <!-- <canvas id="dropHere">
 	           
              </canvas> -->
 	</div>
 		<input id="save2" type="button" value="Save" id="save" size="23" onclick="save2()">
+	
 </div>
 
 

@@ -242,14 +242,14 @@ margin-left: 700px;
 #mypanel{
 	
 	width:200px;
+	/*margin-right: 5px;*/
+	padding right: 150px;
+	height: 100%;
 	z-index: 10000;
-	/* background: blue; */
 	color: white;
-	/*
-overflow-y: hidden !important; 
-    overflow-x:hidden !important;
-*/ 
-     padding-top: 5cm;
+     padding-top: 1cm;
+     overflow-y:auto;
+    /* -webkit-overflow-scrolling:touch;*/
 	
 }
 
