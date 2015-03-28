@@ -552,7 +552,7 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-resizable-e {
 	cursor: e-resize;
-	width: 7px;
+	width: 15px;
 	right: -5px;
 	top: 0;
 	height: 100%;

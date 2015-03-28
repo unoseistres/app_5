@@ -417,7 +417,7 @@ $("#dropHere").droppable({
          newUI.addClass("item-"+counts[0]);
          newUI.css('position','absolute');
          newUI.css('display','block');
-         newUI.css('top','30px');
+         newUI.css('top','20px');
          newUI.css('left','300px');
          newUI.css('z-index','999999');
          make_draggable(newUI);
@@ -472,11 +472,13 @@ function make_draggable(elements)
 
    
 }    
-
+if (touchStart, touchmove, touchend == true){
+  event.preventDefault();
+}
 
     
    });  
-       event.preventDefault();
+       
     
         },
         

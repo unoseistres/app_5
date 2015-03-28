@@ -55,6 +55,8 @@
 /Users/dickweed/documents/app_4/platforms/android/assets/www/css/style2.css \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/css/ui-icons_222222_256x240.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/css/images/ui-bg_glass_100_f6f6f6_1x400.png \
+/Users/dickweed/documents/app_4/platforms/android/assets/www/css/images/ui-bg_glass_100_fdf5ce_1x400.png \
+/Users/dickweed/documents/app_4/platforms/android/assets/www/css/images/ui-bg_glass_65_ffffff_1x400.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/css/images/ui-icons_222222_256x240.png \
 /Users/dickweed/documents/app_4/platforms/android/assets/www/img/clear.png \
