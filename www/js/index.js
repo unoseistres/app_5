@@ -573,7 +573,7 @@ var hammertime = Hammer(element, {
         //$(event.target).parent().css( "z-index", "999999" );
 
         // to change the css of the image, deal with element
-        // to change the css of the wrapper div, use event.target.parent()
+        // to change the css of the wrapper div, use event.target.parent() ok ok ok 
   }
 }
 
