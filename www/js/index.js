@@ -400,10 +400,12 @@ $("#dropHere").droppable({
        drop: function(e, ui){
                if(ui.draggable.hasClass("dragImg")) {
                  
-                 var newUI = $('<div>');
+                 var newUI = $('<div id="wrapper">');
                  newUI.append(ui.draggable.children('img').eq(0).clone());
                  //ui.draggable.remove();
                  
+
+
                  
                  /*
                    
@@ -421,27 +423,30 @@ $("#dropHere").droppable({
          newUI.css('left','300px');
          newUI.css('z-index','999999');
          make_draggable(newUI);
-            newUI.addClass("imgSize-"+counts[0]);
-            console.log("adding new ");
+         // newUI.addClass("imgSize-"+counts[0]);
                 
    //Remove the current class (ui-draggable and dragImg)
          //$("#dropHere .item-"+counts[0]).removeClass("dragImg");
          //$("#dropHere .item-"+counts[0]).removeClass("ui-draggable");
          $("#dropHere .dragImg").removeClass("ui-draggable-dragging");
-         
+        
+        // var newElement = $(this).children()
+        // newElement = newElement[0];
+        // newElement.id = 'drawing-'+Math.floor((Math.random() * 10000) + 1);
+        createHammerTime(newUI);
 
 
-$(".item-"+counts[0]).tap(function() {
-$(this).remove(); 
-});
+// $(".item-"+counts[0]).tap(function() {
+// $(this).remove(); 
+// });
 // console.log("about to make resizable"); 
 //make_draggable($("item-"+counts[0])); 
-newUI.resizable(resizeOpts);
-$("imgSize-"+counts[0]).resizable(resizeOpts);
+// newUI.resizable(resizeOpts);
+// $("imgSize-"+counts[0]).resizable(resizeOpts);
 
-  console.log("making resizable");
-      
-       console.log("making resizable");
+// console.log("making resizable");
+
+// console.log($("imgSize-"+counts[0]));
       
 
 
@@ -493,56 +498,83 @@ if (touchStart, touchmove, touchend == true){
       alert("hi");
 }
 
-// function makeScale(e,scale){
-//   e.style = e.style + "-webkit-transform:scale("+scale+"); transform:scale("+scale+");";
-// }
 
-//   function touchStart(e) {  
-//   var box = document.getElementById("box");  
-//   box.style.background = "green";  
-//   console.log( "Touch Start! " + e.type + " event=" + inspect( e ) );  
-//   logDetails( inspect( e.touches.item(0) ) );  
-//   e.preventDefault();  
-//   return false;  
-// }  
-  
-// function touchMove(e) {  
-//   var targetEvent =  e.touches.item(0);  
-//   var box = document.getElementById("box");  
-//   box.style.background = "yellow";  
-//   box.style.left = targetEvent.clientX + "px";  
-//   box.style.top= targetEvent.clientY + "px";  
-//   console.log("[x,y]=" + targetEvent.clientX + "," + targetEvent.clientY );  
-//   logDetails( inspect( e ) );  
-//   e.preventDefault();  
-//   return false;  
-// }  
 
-    
-//   function touchEnd(e) {  
-//   var box = document.getElementById("box");  
-//   box.style.background = "green";  
-//   console.log( "Touch Start! " + e.type + " event=" + inspect( e ) );  
-//   logDetails( inspect( e.touches.item(0) ) );  
-//   e.preventDefault();  
-//   return false;  
-// }  
-  
-// var dist =
-// Math.sqrt(
-//     (e.touches[0].x-e.touches[1].x) * (e.touches[0].x-e.touches[1].x) +
-//     (e.touches[0].y-e.touches[1].y) * (e.touches[0].y-e.touches[1].y));
 
-// function save2(dataURL)
-// {
-//     alert("saving!");
-//     window.canvas2ImagePlugin.saveImageDataToLibrary(
-//         function(msg){
-//             console.log(msg);
-//         },
-//         function(err){
-//             console.log(err);
-//         },
-//         document.getElementById('dropHere')
-//     );
-// }
+function createHammerTime(element){
+
+
+
+console.log('adding hammertime for elemet ' + element);
+
+var hammertime = Hammer(element, {
+        transform_always_block: true,
+        transform_min_scale: 1,
+        drag_block_horizontal: true,
+        drag_block_vertical: true,
+        drag_min_distance: 0
+    });
+ 
+    var posX=0, posY=0,
+    lastPosX=0, lastPosY=0,
+    bufferX=0, bufferY=0,
+        scale=1, last_scale,
+        rotation= 1, last_rotation, dragReady=0;
+ 
+    hammertime.on('touch transform', function(ev) {
+        console.log(ev.type);
+        console.log(event.target);
+        element = event.target;
+        if(event.target.id=="wrapper") return;
+        else manageMultitouch(ev,element);
+    });  
+
+
+  function manageMultitouch(ev,element){
+
+    switch(ev.type) {
+      case 'touch':
+          last_scale = scale;
+          last_rotation = rotation;
+
+          break;
+
+      case 'drag':
+            posX = ev.gesture.deltaX + lastPosX;
+            posY = ev.gesture.deltaY + lastPosY;
+          break;
+
+      case 'transform':
+          rotation = last_rotation + ev.gesture.rotation;
+          scale = Math.max(1, Math.min(last_scale * ev.gesture.scale, 10));
+          break;
+
+      case 'dragend':
+        lastPosX = posX;
+        lastPosY = posY;
+        break;
+        }
+
+        // var transform =
+        //         "translate3d("+posX+"px,"+posY+"px, 0) " +
+        //         "scale3d("+scale+","+scale+", 0) " +
+        //         "rotate("+rotation+"deg) ";
+
+        var transform =
+                "translate3d("+posX+"px,"+posY+"px, 0) " +
+                "scale3d("+scale+","+scale+", 1) " +
+                "rotate("+rotation+"deg) ";
+
+        element.style.transform = transform;
+        element.style.oTransform = transform;
+        element.style.msTransform = transform;
+        element.style.mozTransform = transform;
+        element.style.webkitTransform = transform;
+        //$(event.target).parent().css( "z-index", "999999" );
+
+        // to change the css of the image, deal with element
+        // to change the css of the wrapper div, use event.target.parent()
+  }
+}
+
+

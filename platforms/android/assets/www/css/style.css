@@ -339,15 +339,9 @@ margin-left: 700px;
 	  
   }
   #theImg{
-	  	
-	  /*
-width:100px;
-	  height:100px;
-*/
-/*
-width:auto;
-height:auto;
-*/
+
+  	-webkit-transform-origin: 0 0;
+
 	  z-index: 100000;
 	  /*position: relative;*/
 	  
@@ -427,4 +421,16 @@ li span {
 	top:480px;
 	left:840px;
 	
+}
+
+#wrapper{
+	/*text-align: center;
+  font: 30px/300px Helvetica, Arial, sans-serif;*/
+}
+
+
+
+#scale-element.reset {
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
